@@ -7,6 +7,7 @@ import 'package:quickalert/widgets/quickalert_dialog.dart';
 
 import '../provider/oattomodel.dart';
 import '../style/colors.dart';
+import '../style/textstyle.dart';
 
 class AddProduct extends StatefulWidget {
   const AddProduct({Key? key}) : super(key: key);
@@ -38,16 +39,12 @@ class _AddProductState extends State<AddProduct> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Padding(
+                Padding(
                   padding: EdgeInsets.only(top: 8.0, bottom: 8),
                   child: SizedBox(
                     child: Text(
                       "Add Product",
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: black,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: mainProductName,
                     ),
                   ),
                 ),
@@ -56,14 +53,7 @@ class _AddProductState extends State<AddProduct> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        "Name Product",
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: black,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
+                      Text("Name Product", style: mainProductText14),
                       TextFormField(
                         controller: nameProductController,
                         validator: (value) {
@@ -81,14 +71,7 @@ class _AddProductState extends State<AddProduct> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        "Description",
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: black,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
+                      Text("Description", style: mainProductText14),
                       TextFormField(
                         controller: descController,
                         validator: (value) {
@@ -106,14 +89,7 @@ class _AddProductState extends State<AddProduct> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        "Product Count",
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: black,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
+                      Text("Product Count", style: mainProductText14),
                       TextFormField(
                         controller: productCountController,
                         keyboardType: TextInputType.number,
@@ -134,14 +110,7 @@ class _AddProductState extends State<AddProduct> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        "Product Price",
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: black,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
+                      Text("Product Price", style: mainProductText14),
                       TextFormField(
                         controller: productPriceController,
                         keyboardType: TextInputType.number,
@@ -195,14 +164,7 @@ class _AddProductState extends State<AddProduct> {
                         ),
                       ),
                     if (checkimage == false)
-                      const Text(
-                        "Please enter the picture",
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.red,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      )
+                      Text("Please enter the picture", style: textAlert12)
                   ],
                 ),
                 const SizedBox(
@@ -258,7 +220,10 @@ class _AddProductState extends State<AddProduct> {
                             });
                           }
                         },
-                        child: const Text("Create"),
+                        child: Text(
+                          "Create",
+                          style: text12white,
+                        ),
                       ),
                     ),
                     const SizedBox(
@@ -269,7 +234,10 @@ class _AddProductState extends State<AddProduct> {
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: const Text("Close"),
+                        child: Text(
+                          "Close",
+                          style: text12white,
+                        ),
                       ),
                     ),
                   ],

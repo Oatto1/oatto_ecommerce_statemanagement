@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import '../model/cartmodel.dart';
 import '../provider/oattomodel.dart';
+import '../style/textstyle.dart';
 import 'ordering-page.dart';
 
 class CartPage extends StatefulWidget {
@@ -154,26 +155,16 @@ class _CartPageState extends State<CartPage> {
                           Column(
                             children: [
                               Text(
-                                cartList
-                                        .firstWhere(
-                                            (element) => element.uuid == uuid)
-                                        .productName ??
-                                    "",
-                                style: GoogleFonts.prompt(
-                                  fontSize: 18,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
+                                  cartList
+                                          .firstWhere(
+                                              (element) => element.uuid == uuid)
+                                          .productName ??
+                                      "",
+                                  style: mainProductPrice),
                               const SizedBox(height: 12),
                               Text(
-                                "฿ ${cartList.firstWhere((element) => element.uuid == uuid).productPrice ?? ""} THB",
-                                style: GoogleFonts.prompt(
-                                  fontSize: 16,
-                                  color: Colors.deepPurple,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
+                                  "฿ ${cartList.firstWhere((element) => element.uuid == uuid).productPrice ?? ""} THB",
+                                  style: mainProductPricePurple),
                               const SizedBox(height: 12),
                               Container(
                                 width: 100,
@@ -245,17 +236,24 @@ class _CartPageState extends State<CartPage> {
                                               context: context,
                                               builder: (BuildContext context) {
                                                 return AlertDialog(
-                                                  title: const Text(
-                                                      'ไม่สามารถเพิ่มสินค้าได้'),
-                                                  content: const Text(
-                                                      'เกินจำนวนสินค้าที่มีอยู่'),
+                                                  title: Text(
+                                                    'ไม่สามารถเพิ่มสินค้าได้',
+                                                    style: mainProductName,
+                                                  ),
+                                                  content: Text(
+                                                      'เกินจำนวนสินค้าที่มีอยู่',
+                                                      style: mainProductText14),
                                                   actions: <Widget>[
                                                     TextButton(
                                                       onPressed: () {
                                                         Navigator.of(context)
                                                             .pop(); // ปิด Alert Dialog
                                                       },
-                                                      child: const Text('ตกลง'),
+                                                      child: Text(
+                                                        'ตกลง',
+                                                        style:
+                                                            mainProductPricePurple,
+                                                      ),
                                                     ),
                                                   ],
                                                 );

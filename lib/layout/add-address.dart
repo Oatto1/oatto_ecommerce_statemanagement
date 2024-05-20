@@ -446,8 +446,7 @@ class _AddAddressState extends State<AddAddress> {
                                   },
                                   type: QuickAlertType.success,
                                   title: "สำเร็จ",
-                                  text:
-                                      'เพิ่มที่อยู่จัดส่งสำเร็จ',
+                                  text: 'เพิ่มที่อยู่จัดส่งสำเร็จ',
                                   confirmBtnColor: Colors.deepPurple,
                                   confirmBtnTextStyle: TextStyle(
                                     fontSize: 14,

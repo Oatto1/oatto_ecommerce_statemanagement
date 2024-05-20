@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../model/productmodel.dart';
 import '../provider/oattomodel.dart';
+import '../style/textstyle.dart';
 import 'add-product.dart';
 import 'cart-page.dart';
 
@@ -102,11 +103,7 @@ class MainProduct extends StatelessWidget {
                             ),
                             Text(
                               productList[index].productName ?? "",
-                              style: GoogleFonts.prompt(
-                                fontSize: 18,
-                                color: Colors.black,
-                                fontWeight: FontWeight.w500,
-                              ),
+                              style: mainProductName
                             ),
                             // Text(productList[index].desc ?? ""),
                             Row(
@@ -114,29 +111,17 @@ class MainProduct extends StatelessWidget {
                               children: [
                                 Text(
                                   "${productList[index].productPrice ?? ""} บาท",
-                                  style: GoogleFonts.prompt(
-                                    fontSize: 24,
-                                    color: Colors.deepPurple,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                                  style: mainProductPrice
                                 ),
                                 Row(
                                   children: [
                                     Text(
                                       "${productList[index].productCount ?? ""}",
-                                      style: GoogleFonts.prompt(
-                                        fontSize: 12,
-                                        color: Colors.deepPurple,
-                                        fontWeight: FontWeight.w500,
-                                      ),
+                                      style: mainProductTextSmall
                                     ),
                                     Text(
                                       " ชิ้น",
-                                      style: GoogleFonts.prompt(
-                                        fontSize: 12,
-                                        color: Colors.deepPurple,
-                                        fontWeight: FontWeight.w500,
-                                      ),
+                                      style: mainProductTextSmall
                                     ),
                                   ],
                                 ),

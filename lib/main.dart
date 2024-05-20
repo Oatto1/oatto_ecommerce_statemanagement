@@ -63,10 +63,8 @@ class MyApp extends StatelessWidget {
         duration: const Duration(milliseconds: 2500),
         animationDuration: const Duration(milliseconds: 2000),
         onAnimationEnd: () => debugPrint("On Scale End"),
-        nextScreen: const MainProduct(
-        ),
+        nextScreen: const MainProduct(),
       ),
     );
   }
 }
-

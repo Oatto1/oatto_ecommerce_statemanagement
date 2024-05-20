@@ -13,8 +13,8 @@ import '../model/productmodel.dart';
 
 class OattoModel with ChangeNotifier, DiagnosticableTreeMixin {
   List<todo> productList = []; // รายการสินค้า
-  List<Cart> cartList = [];
-  List<Cart> selectedCartItems = [];
+  List<Cart> cartList = []; // ตะกร้าสินค้า
+  List<Cart> selectedCartItems = []; // รายการรวมหน้าสั่งซื้อ
   bool? checkOrder;
 
   // เพิ่มฟังก์ชั่นสำหรับการสร้างข้อมูลใหม่ลงในรายการ
